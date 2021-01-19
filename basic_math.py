@@ -1,6 +1,7 @@
 #######################
 # Basic Math          #
 #######################
+import numpy
 
 """
 여기서 간단한 수학을 하는 프로그램을 만들것입니다. 
@@ -101,14 +102,7 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
-    median = None
-    sortedList = sorted(number_list)
-    count = len(sortedList)
-    if count % 2 == 1:
-        median = sortedList[count//2]
-    else:
-        preItem = count//2-1
-        nextItem = count//2
-        median = float(sortedList[preItem]+sortedList[nextItem])/2.0
     
+    sortedList = sorted(number_list)
+    median = numpy.mean(sortedList)    
     return median
