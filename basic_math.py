@@ -111,4 +111,4 @@ def get_median(number_list):
         nextItem = count//2
         median = float(sortedList[preItem]+sortedList[nextItem])/2.0
     
-    return median
+    return int(median)
