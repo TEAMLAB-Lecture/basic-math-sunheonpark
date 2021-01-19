@@ -1,7 +1,7 @@
 #######################
 # Basic Math          #
 #######################
-
+import statistics
 """
 여기서 간단한 수학을 하는 프로그램을 만들것입니다. 
 """
@@ -24,7 +24,11 @@ def get_greatest(number_list):
             >>> bm.get_greatest(number_list)
             99
     """
-    greatest_number = None
+    greatest_number = number_list[0]
+    count = len(number_list)
+    for num in range(1, count):
+        if number_list[num] > greatest_number:
+            greatest_number = number_list[num]
     return greatest_number
 
 
@@ -45,7 +49,11 @@ def get_smallest(number_list):
             >>> bm.get_smallest(number_list)
             11
     """
-    smallest_number = None
+    smallest_number = number_list[0]
+    count = len(number_list)
+    for num in range(1, count):
+        if number_list[num] < smallest_number:
+            smallest_number = number_list[num]
     return smallest_number
 
 
@@ -66,7 +74,10 @@ def get_mean(number_list):
             >>> bm.get_mean(number_list)
             47
     """
-    mean = None
+    sum = 0
+    for number in number_list:
+        sum += number
+    mean = sum / len(number_list)
     return mean
 
 
@@ -91,4 +102,11 @@ def get_median(number_list):
             35.5
     """
     median = None
+    sortedList = sorted(number_list)
+    count = len(sortedList)
+    index = count // 2
+    if count % 2:
+        median = sortedList[index]
+    else:
+        median = float(sortedList[index-1]+sortedList[index])/2.0
     return median
