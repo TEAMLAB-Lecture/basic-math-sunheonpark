@@ -1,7 +1,6 @@
 #######################
 # Basic Math          #
 #######################
-import numpy
 
 """
 여기서 간단한 수학을 하는 프로그램을 만들것입니다. 
@@ -102,7 +101,10 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
+    median = None
+    sum = 0
+    for i in number_list:
+        sum += i
     
-    sortedList = sorted(number_list)
-    median = numpy.mean(sortedList)    
+    median = sum / len(number_list)
     return median
