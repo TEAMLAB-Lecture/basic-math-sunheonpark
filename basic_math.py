@@ -77,7 +77,7 @@ def get_mean(number_list):
     sum = 0
     for number in number_list:
         sum += number
-    mean = int(sum / len(number_list))
+    mean = sum / len(number_list)
     return mean
 
 
@@ -109,5 +109,4 @@ def get_median(number_list):
         median = sortedList[index]
     else:
         median = float(sortedList[index-1]+sortedList[index])/2.0
-        
     return median
